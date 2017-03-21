@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated simplekaos -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="simplekaos.presentation.SimplekaosModelWizardID"
+            name="%_UI_SimplekaosModelWizard_label"
+            class="simplekaos.presentation.SimplekaosModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SimplekaosModelFile.gif">
+         <description>%_UI_SimplekaosModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated simplekaos -->
+      <editor
+            id="simplekaos.presentation.SimplekaosEditorID"
+            name="%_UI_SimplekaosEditor_label"
+            icon="icons/full/obj16/SimplekaosModelFile.gif"
+            extensions="simplekaos"
+            class="simplekaos.presentation.SimplekaosEditor"
+            contributorClass="simplekaos.presentation.SimplekaosActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

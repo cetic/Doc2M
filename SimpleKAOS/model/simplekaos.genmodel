@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SimpleKAOS/src" modelPluginID="SimpleKAOS" modelName="Simplekaos"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>simplekaos.ecore</foreignModel>
+  <genPackages prefix="Simplekaos" disposableProviderFactory="true" ecorePackage="simplekaos.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="simplekaos.ecore#//AgentCategory">
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//AgentCategory/Undefined"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//AgentCategory/Environment"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="simplekaos.ecore#//PriorityType">
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//PriorityType/Low"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//PriorityType/Medium"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//PriorityType/High"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="simplekaos.ecore#//GoalType">
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//GoalType/Goal"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//GoalType/SoftGoal"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//GoalType/Requirement"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//GoalType/Expectation"/>
+      <genEnumLiterals ecoreEnumLiteral="simplekaos.ecore#//GoalType/DomProp"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KConcept">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//KConcept/references"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference simplekaos.ecore#//KConcept/packageOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KConcept/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KConcept/Def"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KConcept/Issue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KConcept/id"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KObject"/>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simplekaos.ecore#//KDocument/containing"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//KDiagram"/>
+    <genClasses ecoreClass="simplekaos.ecore#//Obstacle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Obstacle/sonRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Obstacle/parentRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Obstacle/obstruction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Obstacle/resolution"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KAndOrRel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KAndOrRel/SysRef"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//Goal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/sonRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/parentRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/assignment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//Goal/Priority"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/conflict"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/obstruction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/resolution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//Goal/Category"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Goal/responsibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//Goal/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//GRefinement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//GRefinement/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//GRefinement/sons"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//ORefinement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//ORefinement/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//ORefinement/sons"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//Assignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Assignment/goal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Assignment/assignee"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//KReference/conceptOf"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference simplekaos.ecore#//KReference/documentOf"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//KPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simplekaos.ecore#//KPackage/containing"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//KGReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KGReference/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KGReference/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KGReference/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KGReference/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KGReference/label"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KRationale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//KRationale/GWT"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simplekaos.ecore#//KRelationship"/>
+    <genClasses ecoreClass="simplekaos.ecore#//Conflict">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//Conflict/BoundaryCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Conflict/goal"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//Responsibility">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Responsibility/leafGoal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Responsibility/responsible"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//Obstruction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Obstruction/goal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Obstruction/obstacle"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//Resolution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Resolution/goal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Resolution/obstacle"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//Agent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Agent/responsibility"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//Agent/assignment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//Agent/Category"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//TextDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simplekaos.ecore#//TextDocument/content"/>
+    </genClasses>
+    <genClasses ecoreClass="simplekaos.ecore#//KReport">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simplekaos.ecore#//KReport/contained"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
