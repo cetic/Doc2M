@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="Doc2MServer">
+      </category>
+      <command
+            name="Doc2M Server"
+            categoryId="Doc2MServer.commands.category"
+            id="Doc2MServer.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="Doc2MServer.commands.sampleCommand"
+            class="doc2m.handlers.Doc2MHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="Doc2MServer.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Doc2MServerMenu"
+               mnemonic="M"
+               id="Doc2MServer.menus.sampleMenu">
+            <command
+                  commandId="Doc2MServer.commands.sampleCommand"
+                  mnemonic="S"
+                  id="MSOffice.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="Doc2MServer.toolbars.sampleToolbar">
+            <command
+                  commandId="Doc2MServer.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Doc2MServer"
+                  id="Doc2MServer.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
