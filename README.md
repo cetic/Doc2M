@@ -2,7 +2,7 @@
 
 Check out the 4 projects into eclipse workspace
 
-Launch MSOffice project as Eclipse Application
+Launch Doc2MServer project as Eclipse Application
 
 Copy the sample project into runtime-workspace
 
