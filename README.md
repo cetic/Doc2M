@@ -12,7 +12,9 @@ Our work is still being elaborated to support a wider range of EMF-based tools (
 
 ## pre-requisite: 
 
-* TODO version de java, eclipse, emf...
+* Eclipse Mars
+* Java 1.8
+* EMF 2.11.2
 
 ## how to configure
 
