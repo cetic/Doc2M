@@ -28,10 +28,9 @@ public class LocateConceptRestlet extends Doc2MRestlet{
 	        if(request.getMethod().equals(Method.GET)) {
 	        	try{
 	        		String id = (String) request.getAttributes().get("id");
+	        		logger.log(Level.INFO,  "Locate concept: {0}", id);
 	        		locateConcept.locate(id);	        	        
-		        	response.setStatus(Status.SUCCESS_OK);
-		        	response.setEntity(new StringRepresentation(id));
-	        	        
+		        	response.setStatus(Status.SUCCESS_NO_CONTENT);		        		        	        
 	        	}
 	        	catch(Exception ex){
 	        		logger.log(Level.WARNING,  ex.getMessage(), ex);

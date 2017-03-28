@@ -3,12 +3,15 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Doc2MServer
 Bundle-SymbolicName: Doc2MServer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: doc2m.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  SimpleKAOS;bundle-version="1.0.0",
  SimpleKAOS.edit;bundle-version="1.0.0",
- SimpleKAOS.editor;bundle-version="1.0.0"
+ SimpleKAOS.editor;bundle-version="1.0.0",
+ org.eclipse.ui.workbench,
+ org.eclipse.jface,
+ org.eclipse.swt,
+ org.eclipse.emf.edit.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: libs/restlet/jackson-all-1.9.11.jar,
