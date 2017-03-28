@@ -3,12 +3,15 @@ package be.cetic.doc2m.rest.server;
 import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.ServerSocket;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Protocol;
+import org.restlet.service.CorsService;
 
 public class Doc2MRestServer {
 	private static final Logger logger = Logger.getLogger(Doc2MRestServer.class.getName());
@@ -23,11 +26,19 @@ public class Doc2MRestServer {
 			this.protocol = protocol;
 			Doc2MRestServer.port = port;
 			application = new Doc2MRestApplication();
+			CorsService corsService = new CorsService();
+		    corsService.setAllowingAllRequestedHeaders(true);
+		    corsService.setAllowedOrigins(new HashSet(Arrays.asList("*")));
+		    corsService.setAllowedCredentials(true);
+		    corsService.setSkippingResourceForCorsOptions(true);
+			application.getServices().add(corsService);
 			component = new Component();
 			
 			server = component.getServers().add(protocol, port);
-			component.getDefaultHost().attach("/doc2M", application);
+			
+			component.getDefaultHost().attach("/doc2M", application);			
 			component.getLogService().setEnabled(false);
+			
 			
 		}
 		catch(Exception ex){
