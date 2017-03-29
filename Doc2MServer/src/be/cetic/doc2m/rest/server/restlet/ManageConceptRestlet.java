@@ -1,5 +1,6 @@
 package be.cetic.doc2m.rest.server.restlet;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -66,6 +67,20 @@ public class ManageConceptRestlet extends Doc2MRestlet{
         		
         	}        		        
         }               
+        else if(request.getMethod().equals(Method.GET)){
+        	try{
+	        	logger.log(Level.INFO,  "get Model");
+	        	List<Concept> concepts = manageConcept.getModel();
+	        	response.setStatus(Status.SUCCESS_OK);
+	        	response.setEntity(new StringRepresentation(mapper.writeValueAsString(concepts)));
+        	}
+        	catch(Exception ex){
+        		logger.log(Level.WARNING, ex.getMessage(), ex);
+        		response.setStatus(Status.CLIENT_ERROR_BAD_REQUEST);
+        		response.setEntity(buildError(ex), MediaType.APPLICATION_JSON);
+        		
+        	}    
+        }
         else{
             response.setStatus(Status.CLIENT_ERROR_BAD_REQUEST);
         }

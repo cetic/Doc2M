@@ -43,7 +43,7 @@ public class Doc2MRestApplication extends Application{
 	  //guard.getSecrets().put("scott", "tiger".toCharArray());
 	  //router.attach("/", guard);
 	  router.attach("/concepts", manageConceptRestlet);
-	  router.attach("/concepts/{id}", locateConceptRestlet);
+	  router.attach("/concepts/{id}/locate", locateConceptRestlet);
 	  router.attach("/util/conceptTypes", informationConceptRestlet);
 	  
 	  return router;
