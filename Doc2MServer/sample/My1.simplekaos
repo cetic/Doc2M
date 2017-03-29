@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<simplekaos:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simplekaos="http://www.respect-it.be/simplekaos" Name="GOAL1 " id="9ce9f46d-df10-4cde-97c2-88f93dd504e7"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simplekaos="http://www.respect-it.be/simplekaos">
+  <simplekaos:Agent Name="Agent 1" id="cf8ade3b-1bad-4e19-b641-89fe7da51d22"/>
+  <simplekaos:Goal Name="Goal 1" id="ea58151c-020e-43ac-82c2-b1a7b4362ab7"/>
+  <simplekaos:Goal Name="Expectation 1" id="7432d7fe-318e-468f-aae4-8d5040d799f9" Type="Expectation"/>
+  <simplekaos:Goal Name="Requirement 1" id="97fdce90-89a0-481f-8298-aab2b53b1136" Type="Requirement"/>
+  <simplekaos:Obstacle Name="Obstacle 1" id="5b119a3c-734c-4fad-9b37-ece9cfccb256"/>
+  <simplekaos:Obstacle Name="Obstacle 2" id="fe7d4865-a93f-4afc-a5cc-bf6797c5819b"/>
+  <simplekaos:Goal Name="Goal 2 Editing in line" id="fad0802a-2173-4257-8e53-31b54f10bd8a"/>
+  <simplekaos:Agent Name="Create new Agent" id="2ea6969f-951f-4e9e-8614-7b2177c29658"/>
+</xmi:XMI>

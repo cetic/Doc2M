@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>DOC2M: HTML SAMPLE</title>
+<link rel="stylesheet" href="lib/jstree/themes/default/style.min.css" />
+<script type="text/javascript" src="lib/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/Network.js"></script>
+<script src="lib/jstree/jstree.min.js"></script>
+ 
+</head>
+
+<body>
+<script>
+$(document).ready(function(){
+	$('div#model').jstree();
+	network_getConceptTypes(
+			function(data){
+				console.log(data);
+				var types = data.types;
+				
+				for(var i=0; i < types.length; i++){
+					console.log(types[i]);
+					$('#type').append($('<option>', {
+					    value: types[i],
+					    text: types[i]
+					}));
+				}
+			}, 
+			function(jqXHR, textStatus, errorThrown){
+				
+			});
+	refreshList();
+	$('input#save').click(function(){
+		console.log("Create new concept");
+		var name = $('input#name').val();
+		var type = $('select#type').val();
+		if(name.trim() == ''){
+			console.error('name is null');
+		}
+		else if(type.trim() == ''){
+			console.error('type is null');
+		}
+		else{
+			network_createConcept(name, type, function(data){
+				console.log("Success");
+				// Refresh the list
+				refreshList();
+			},
+			function(jqXHR, textStatus, errorThrown){
+				console.error(jqXHR);
+			});	
+		}
+	});
+});
+
+function refreshList(){
+	$('table#model>tbody').html('');
+	network_getModel(
+		function(data){
+			console.log(data);
+			for(var i=0; i < data.length; i++){
+				var concept = data[i];
+				addConcept(concept);
+			}
+		},
+		function(jqXHR, textStatus, errorThrown){
+			console.error(jqXHR);
+		}
+	)
+}
+
+function addConcept(concept){
+	$('table#model>tbody').append('<tr><td class="' + concept.type + '" id="' + concept.id + '"><a href="#" id="'+ concept.id + '" onclick="locate(\''+concept.id +'\');">' + concept.name + '</a></td></tr>');
+}
+
+function locate(conceptId){
+	network_locateConcept(conceptId, function(data){
+		console.log(data);
+	},
+	function(jqXHR, textStatus, errorThrown){
+		console.log(jqXHR);
+	});
+	
+}
+</script>
+<h1>Doc2M : Sample Example</h1>
+<div class="model">
+<h2>Model</h2>
+<div id="model"></div>
+
+<table id="model">
+		<thead>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	</div>
+	
+	<div class="concept form">
+  <h4>Create new concept</h4>
+  <form>
+  	<input type="text" id="name" name="name" placeholder="Concept name"></input>
+  	<select id="type" name="type"></select>
+  	<input class="concept-submit" type="button" id="save" value="Create"/>
+  </form>
+  </div>
+</body>
+</html>
